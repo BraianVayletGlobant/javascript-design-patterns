@@ -79,18 +79,29 @@ Por Ejemplo este patron suele estar implementado en muchas librerías y framewor
 
 - **Vue** utiliza el patrón Singleton en su sistema de inyección de dependencias. Los objetos Singleton se utilizan para proporcionar servicios en toda la aplicación y se pueden inyectar en los componentes Vue.
 
-## Pros y Contras:
+## Pros y Contras
 
 **Pros:**
 
 - Control de la instancia: Un Singleton permite tener un control estricto sobre la creación de instancias. Al tener una única instancia, se evita la creación de varias instancias innecesarias y se asegura que todos los componentes de la aplicación estén usando la misma instancia.
 - Fácil acceso: La instancia única del Singleton se puede acceder fácilmente desde cualquier lugar de la aplicación, ya que su acceso está centralizado en el método estático getInstance(). Esto hace que la instancia sea fácil de usar en diferentes partes de la aplicación.
 - Ahorro de recursos: Al tener una única instancia, se ahorran recursos al evitar la creación de múltiples instancias y al reducir el uso de memoria.
+- Puede estar seguro de que una clase tiene solo una instancia.
+- Obtienes un punto de acceso global a esa instancia.
+- El objeto singleton se inicializa solo cuando se solicita por primera vez.
 
 **Contras:**
 
 - Dificultad para testear: Al tener una única instancia, los Singletons pueden hacer que las pruebas unitarias sean más difíciles de realizar. Las pruebas unitarias deben ser independientes entre sí y el uso de un Singleton puede hacer que las pruebas sean más difíciles de configurar.
 - Acoplamiento: El uso excesivo de Singleton puede provocar un acoplamiento excesivo entre las diferentes partes de la aplicación. Esto puede dificultar la modularidad y la escalabilidad de la aplicación.
 - Problemas de concurrencia: Si el Singleton es utilizado por varios procesos o hilos de ejecución simultáneamente, puede haber problemas de concurrencia. En estos casos, se deben implementar mecanismos para garantizar la coherencia de los datos.
+- Viola el Principio de Responsabilidad Única . El patrón resuelve dos problemas a la vez.
+- El patrón Singleton puede enmascarar un mal diseño, por ejemplo, cuando los componentes del programa saben demasiado unos de otros.
+- El patrón requiere un tratamiento especial en un entorno de subprocesos múltiples para que varios subprocesos no creen un objeto único varias veces.
 
 > Por causa de las contras se lo suele considerar a Singleton como un **ANTI-PATRON**.
+
+## EXTRA INFO
+
+- [refactoring.guru - singleton](https://refactoring.guru/design-patterns/singleton)
+- [patterns.dev - singleton](https://www.patterns.dev/posts/singleton-pattern)
